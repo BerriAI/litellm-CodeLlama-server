@@ -51,8 +51,6 @@ This API endpoint accepts all inputs in raw JSON and expects the following input
 
 #### Example JSON body
 
-For claude-2
-
 ```json
 {
   "prompt": "write me a function to print hello world"
