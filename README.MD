@@ -1,6 +1,6 @@
 # CodeLlama Server: Streaming, Caching, Model Fallbacks (OpenAI + Anthropic), Prompt-tracking
 
-Works with: Anthropic, Huggingface, Cohere, TogetherAI, Azure, OpenAI, etc.
+Works with: CodeLlama, Starcoder, Replit-Code-v1, Phind-CodeLlama, GPT-4, Claude-2, etc.
 
 [![PyPI Version](https://img.shields.io/pypi/v/litellm.svg)](https://pypi.org/project/litellm/)
 [![PyPI Version](https://img.shields.io/badge/stable%20version-v0.1.345-blue?color=green&link=https://pypi.org/project/litellm/0.1.1/)](https://pypi.org/project/litellm/0.1.1/)
