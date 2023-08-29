@@ -15,13 +15,9 @@ Works with: Anthropic, Huggingface, Cohere, TogetherAI, Azure, OpenAI, etc.
 - Make `/chat/completions` streaming requests for 100+ LLM models 
 - Sets default system prompt for guardrails `system_prompt = "Only respond to questions about code. Say 'I don't know' to anything outside of that."`
 - Integrates with Promptlayer for model + prompt tracking 
-- Example curl command
+- Example output
 
-```curl
-curl --location 'localhost:4000/chat/completions' \
---header 'Content-Type: application/json' \
---data '{"model": "togethercomputer/CodeLlama-34b-Instruct", "messages": [{"role": "user","content": "write me a function to print hello world"}], "stream": true}'
-```
+![Code output](imgs/code-output.png)
 
 - **Consistent Input/Output** Format
   - Call all models using the OpenAI format - `completion(model, messages)`

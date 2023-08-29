@@ -10,10 +10,9 @@ import json
 dotenv.load_dotenv()
 
 # TODO: set your keys in .env or here:
-os.environ["OPENAI_API_KEY"] = "" # set your openai key here
-os.environ["ANTHROPIC_API_KEY"] = "" # set your anthropic key here
-os.environ["TOGETHER_AI_API_KEY"] = "" # set your together ai key here
-
+# os.environ["OPENAI_API_KEY"] = "" # set your openai key here
+# os.environ["ANTHROPIC_API_KEY"] = "" # set your anthropic key here
+# os.environ["TOGETHER_AI_API_KEY"] = "" # set your together ai key here
 # see supported models / keys here: https://litellm.readthedocs.io/en/latest/supported/
 ######### ENVIRONMENT VARIABLES ##########
 verbose = True
