@@ -12,7 +12,7 @@ Works with: Anthropic, Huggingface, Cohere, TogetherAI, Azure, OpenAI, etc.
 
 ## What does CodeLlama Server do
 
-- Make `/chat/completions` streaming requests for 100+ LLM models 
+- Uses Together AI's CodeLlama to answer coding questions, with GPT-4 + Claude-2 as backups (you can easily switch this to any model from Huggingface, Replicate, Cohere, AI21, Azure, OpenAI, etc.) 
 - Sets default system prompt for guardrails `system_prompt = "Only respond to questions about code. Say 'I don't know' to anything outside of that."`
 - Integrates with Promptlayer for model + prompt tracking 
 - Example output
@@ -46,9 +46,7 @@ This endpoint is used to generate chat completions for 50+ support LLM API Model
 
 This API endpoint accepts all inputs in raw JSON and expects the following inputs
 
-- `model` (string, required): ID of the model to use for chat completions. See all supported models [here]: (https://litellm.readthedocs.io/en/latest/supported/):
-  eg `gpt-3.5-turbo`, `gpt-4`, `claude-2`, `command-nightly`, `stabilityai/stablecode-completion-alpha-3b-4k`
-- `messages` (array, required): A list of messages representing the conversation context. Each message should have a `role` (system, user, assistant, or function), `content` (message text), and `name` (for function role).
+- `prompt` (string, required): The user's coding related question
 - Additional Optional parameters: `temperature`, `functions`, `function_call`, `top_p`, `n`, `stream`. See the full list of supported inputs here: https://litellm.readthedocs.io/en/latest/input/
 
 #### Example JSON body
@@ -57,13 +55,7 @@ For claude-2
 
 ```json
 {
-  "model": "claude-2",
-  "messages": [
-    {
-      "content": "Hello, whats the weather in San Francisco??",
-      "role": "user"
-    }
-  ]
+  "prompt": "write me a function to print hello world"
 }
 ```
 
@@ -73,22 +65,17 @@ For claude-2
 import requests
 import json
 
-# TODO: use your URL
-url = "http://localhost:5000/chat/completions"
+url = "localhost:4000/chat/completions"
 
 payload = json.dumps({
-  "model": "gpt-3.5-turbo",
-  "messages": [
-    {
-      "content": "Hello, whats the weather in San Francisco??",
-      "role": "user"
-    }
-  ]
+  "prompt": "write me a function to print hello world"
 })
 headers = {
   'Content-Type': 'application/json'
 }
+
 response = requests.request("POST", url, headers=headers, data=payload)
+
 print(response.text)
 
 ```
@@ -100,25 +87,23 @@ All responses from the server are returned in the following format (for all LLM 
 
 ```json
 {
-  "choices": [
-    {
-      "finish_reason": "stop",
-      "index": 0,
-      "message": {
-        "content": "I'm sorry, but I don't have the capability to provide real-time weather information. However, you can easily check the weather in San Francisco by searching online or using a weather app on your phone.",
-        "role": "assistant"
-      }
+    "choices": [
+        {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+                "content": ".\n\n```\ndef print_hello_world():\n    print(\"hello world\")\n",
+                "role": "assistant"
+            }
+        }
+    ],
+    "created": 1693279694.6474009,
+    "model": "togethercomputer/CodeLlama-34b-Instruct",
+    "usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 28,
+        "total_tokens": 42
     }
-  ],
-  "created": 1691790381,
-  "id": "chatcmpl-7mUFZlOEgdohHRDx2UpYPRTejirzb",
-  "model": "gpt-3.5-turbo-0613",
-  "object": "chat.completion",
-  "usage": {
-    "completion_tokens": 41,
-    "prompt_tokens": 16,
-    "total_tokens": 57
-  }
 }
 ```
 
