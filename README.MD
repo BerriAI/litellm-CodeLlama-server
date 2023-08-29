@@ -10,7 +10,7 @@ Works with: Anthropic, Huggingface, Cohere, TogetherAI, Azure, OpenAI, etc.
 
 **LIVE DEMO** - https://litellm.ai/playground
 
-## What does liteLLM Code-Gen do
+## What does CodeLlama Server do
 
 - Make `/chat/completions` streaming requests for 100+ LLM models 
 - Sets default system prompt for guardrails `system_prompt = "Only respond to questions about code. Say 'I don't know' to anything outside of that."`
