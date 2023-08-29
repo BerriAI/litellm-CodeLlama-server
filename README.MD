@@ -1,6 +1,4 @@
-# liteLLM Code-Gen Server: 100+ LLM Models, Streaming, Error Handling, Caching, Prompt-tracking
-
-### Stream CodeLlama, with GPT-4 and Claude-2 as backups
+# CodeLlama Server: Streaming, Caching, Model Fallbacks (OpenAI + Anthropic), Prompt-tracking
 
 Works with: Anthropic, Huggingface, Cohere, TogetherAI, Azure, OpenAI, etc.
 
