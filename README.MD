@@ -8,14 +8,16 @@ Works with: Anthropic, Huggingface, Cohere, TogetherAI, Azure, OpenAI, etc.
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/HuDPw-?referralCode=jch2ME)
 
-## What does liteLLM Code-Gen do
+**LIVE DEMO** - https://litellm.ai/playground
+
+## What does CodeLlama Server do
 
 - Make `/chat/completions` streaming requests for 100+ LLM models 
 - Sets default system prompt for guardrails `system_prompt = "Only respond to questions about code. Say 'I don't know' to anything outside of that."`
 - Integrates with Promptlayer for model + prompt tracking 
 - Example output
 
-<img src="imgs/code-output.png" alt="Code Output" width="800"/>
+<img src="imgs/code-output.png" alt="Code Output" width="600"/>
 
 - **Consistent Input/Output** Format
   - Call all models using the OpenAI format - `completion(model, messages)`
@@ -26,13 +28,13 @@ Works with: Anthropic, Huggingface, Cohere, TogetherAI, Azure, OpenAI, etc.
 
   **Example: Logs sent to PromptLayer**
 
-    <img src="imgs/promptlayer_logging.png" alt="Prompt Logging" width="500"/>
+    <img src="imgs/promptlayer_logging.png" alt="Prompt Logging" width="900"/>
 
 
 - **Token Usage & Spend** - Track Input + Completion tokens used + Spend/model - https://docs.litellm.ai/docs/token_usage
 - **Caching** - Provides in-memory cache + GPT-Cache integration for more advanced usage - https://docs.litellm.ai/docs/caching/gpt_cache
 
-- **Streaming & Async Support** - Return generators to stream text responses
+- **Streaming & Async Support** - Return generators to stream text responses - TEST IT 👉 https://litellm.ai/
 
 ## API Endpoints
 
