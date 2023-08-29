@@ -15,7 +15,7 @@ Works with: Anthropic, Huggingface, Cohere, TogetherAI, Azure, OpenAI, etc.
 - Integrates with Promptlayer for model + prompt tracking 
 - Example output
 
-![Code output](imgs/code-output.png)
+<img src="imgs/code-output.png" alt="Code Output" width="400"/>
 
 - **Consistent Input/Output** Format
   - Call all models using the OpenAI format - `completion(model, messages)`
