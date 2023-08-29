@@ -8,7 +8,7 @@ Works with: Anthropic, Huggingface, Cohere, TogetherAI, Azure, OpenAI, etc.
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/HuDPw-?referralCode=jch2ME)
 
-**LIVE DEMO** - https://litellm.ai/
+**LIVE DEMO** - https://litellm.ai/playground
 
 ## What does liteLLM Code-Gen do
 
