@@ -12,6 +12,7 @@ Works with: CodeLlama, Starcoder, Replit-Code-v1, Phind-CodeLlama, GPT-4, Claude
 
 ## What does CodeLlama Server do
 - **Default model**: Uses Together AI's CodeLlama to answer coding questions, with GPT-4 + Claude-2 as backups (you can easily switch this to any model from Huggingface, Replicate, Cohere, AI21, Azure, OpenAI, etc.) 
+  - Together AI model + keys - https://together.ai/
 - **Guardrail prompts**: `system_prompt = "Only respond to questions about code. Say 'I don't know' to anything outside of that."`
 
 
