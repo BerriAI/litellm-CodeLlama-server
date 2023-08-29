@@ -26,7 +26,7 @@ Works with: Anthropic, Huggingface, Cohere, TogetherAI, Azure, OpenAI, etc.
 
   **Example: Logs sent to PromptLayer**
 
-    <img src="imgs/promptlayer_logging.png" alt="Prompt Logging" width="600"/>
+    <img src="imgs/promptlayer_logging.png" alt="Prompt Logging" width="900"/>
 
 
 - **Token Usage & Spend** - Track Input + Completion tokens used + Spend/model - https://docs.litellm.ai/docs/token_usage
