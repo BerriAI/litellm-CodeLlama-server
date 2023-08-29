@@ -15,17 +15,19 @@ Works with: Anthropic, Huggingface, Cohere, TogetherAI, Azure, OpenAI, etc.
 - Integrates with Promptlayer for model + prompt tracking 
 - Example output
 
-![Code output](imgs/code-output.png)
+    <img src="imgs/code-output.png" alt="Code Output" width="800"/>
 
 - **Consistent Input/Output** Format
   - Call all models using the OpenAI format - `completion(model, messages)`
   - Text responses will always be available at `['choices'][0]['message']['content']`
   - Stream responses will always be available at `['choices'][0]['delta']['content']`
 - **Error Handling** Using Model Fallbacks (if `CodeLlama` fails, try `GPT-4`) with cooldowns, and retries
-- **Logging** - Log Requests, Responses and Errors to `Supabase`, `Posthog`, `Mixpanel`, `Sentry`, `LLMonitor,` `Helicone` (Any of the supported providers here: https://litellm.readthedocs.io/en/latest/advanced/
+- **Prompt Logging** - Log successful completions to promptlayer for testing + iterating on your prompts in production! (Learn more: https://litellm.readthedocs.io/en/latest/advanced/
 
-  **Example: Logs sent to Supabase**
-  <img width="1015" alt="Screenshot 2023-08-11 at 4 02 46 PM" src="https://github.com/ishaan-jaff/proxy-server/assets/29436595/237557b8-ba09-4917-982c-8f3e1b2c8d08">
+  **Example: Logs sent to PromptLayer**
+
+    <img src="imgs/promptlayer_logging.png" alt="Prompt Logging" width="500"/>
+
 
 - **Token Usage & Spend** - Track Input + Completion tokens used + Spend/model - https://docs.litellm.ai/docs/token_usage
 - **Caching** - Provides in-memory cache + GPT-Cache integration for more advanced usage - https://docs.litellm.ai/docs/caching/gpt_cache

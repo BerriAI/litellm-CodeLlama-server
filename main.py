@@ -13,14 +13,15 @@ dotenv.load_dotenv()
 # os.environ["OPENAI_API_KEY"] = "" # set your openai key here
 # os.environ["ANTHROPIC_API_KEY"] = "" # set your anthropic key here
 # os.environ["TOGETHER_AI_API_KEY"] = "" # set your together ai key here
+os.environ["LITELLM_TOKEN"] = "0e80c859-4748-4617-b563-1ef6f400a571"
 # see supported models / keys here: https://litellm.readthedocs.io/en/latest/supported/
 ######### ENVIRONMENT VARIABLES ##########
 verbose = True
 
 # litellm.caching_with_models = True # CACHING: caching_with_models Keys in the cache are messages + model. - to learn more: https://docs.litellm.ai/docs/caching/
 ######### PROMPT LOGGING ##########
-# os.environ["PROMPTLAYER_API_KEY"] = "" # set your promptlayer key here
-# litellm.success_callback = ["promptlayer"] # log the prompt to promptlayer when a request is successfully completed
+os.environ["PROMPTLAYER_API_KEY"] = "pl_449a7757e36ec4e1402c452af9a356f6" # set your promptlayer key here
+litellm.success_callback = ["promptlayer"] # log the prompt to promptlayer when a request is successfully completed
 
 ############ HELPER FUNCTIONS ###################################
 
