@@ -13,16 +13,16 @@ dotenv.load_dotenv()
 # os.environ["OPENAI_API_KEY"] = "" # set your openai key here
 # os.environ["ANTHROPIC_API_KEY"] = "" # set your anthropic key here
 # os.environ["TOGETHER_AI_API_KEY"] = "" # set your together ai key here
-os.environ["LITELLM_TOKEN"] = "0e80c859-4748-4617-b563-1ef6f400a571"
 # see supported models / keys here: https://litellm.readthedocs.io/en/latest/supported/
 ######### ENVIRONMENT VARIABLES ##########
 verbose = True
 
 # litellm.caching_with_models = True # CACHING: caching_with_models Keys in the cache are messages + model. - to learn more: https://docs.litellm.ai/docs/caching/
 ######### PROMPT LOGGING ##########
-os.environ["PROMPTLAYER_API_KEY"] = "pl_449a7757e36ec4e1402c452af9a356f6" # set your promptlayer key here
-litellm.success_callback = ["promptlayer"] # log the prompt to promptlayer when a request is successfully completed
+os.environ["PROMPTLAYER_API_KEY"] = "" # set your promptlayer key here - https://promptlayer.com/
 
+# set callbacks
+litellm.success_callback = ["promptlayer"]
 ############ HELPER FUNCTIONS ###################################
 
 def print_verbose(print_statement):
@@ -47,11 +47,12 @@ def api_completion():
     if data.get('stream') == "True":
         data['stream'] = True # convert to boolean
     try:
-        if "messages" not in data:
-            raise ValueError("data needs to have messages")
+        if "prompt" not in data:
+            raise ValueError("data needs to have prompt")
+        data["model"] = "togethercomputer/CodeLlama-34b-Instruct" # by default use Together AI's CodeLlama model - https://api.together.xyz/playground/chat?model=togethercomputer%2FCodeLlama-34b-Instruct
         # COMPLETION CALL
         system_prompt = "Only respond to questions about code. Say 'I don't know' to anything outside of that."
-        messages = [{"role": "system", "content": system_prompt},data.pop("messages")[0]]
+        messages = [{"role": "system", "content": system_prompt}, {"role": "user", "content": data.pop("prompt")}]
         data["messages"] = messages
         print(f"data: {data}")
         response = completion(**data)
