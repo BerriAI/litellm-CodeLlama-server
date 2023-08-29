@@ -15,7 +15,7 @@ Works with: Anthropic, Huggingface, Cohere, TogetherAI, Azure, OpenAI, etc.
 - Integrates with Promptlayer for model + prompt tracking 
 - Example output
 
-<img src="imgs/code-output.png" alt="Code Output" width="800"/>
+<img src="imgs/code-output.png" alt="Code Output" width="600"/>
 
 - **Consistent Input/Output** Format
   - Call all models using the OpenAI format - `completion(model, messages)`
@@ -26,7 +26,7 @@ Works with: Anthropic, Huggingface, Cohere, TogetherAI, Azure, OpenAI, etc.
 
   **Example: Logs sent to PromptLayer**
 
-    <img src="imgs/promptlayer_logging.png" alt="Prompt Logging" width="500"/>
+    <img src="imgs/promptlayer_logging.png" alt="Prompt Logging" width="600"/>
 
 
 - **Token Usage & Spend** - Track Input + Completion tokens used + Spend/model - https://docs.litellm.ai/docs/token_usage
