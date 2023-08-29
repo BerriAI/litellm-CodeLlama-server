@@ -32,7 +32,7 @@ Works with: Anthropic, Huggingface, Cohere, TogetherAI, Azure, OpenAI, etc.
 - **Token Usage & Spend** - Track Input + Completion tokens used + Spend/model - https://docs.litellm.ai/docs/token_usage
 - **Caching** - Provides in-memory cache + GPT-Cache integration for more advanced usage - https://docs.litellm.ai/docs/caching/gpt_cache
 
-- **Streaming & Async Support** - Return generators to stream text responses
+- **Streaming & Async Support** - Return generators to stream text responses - TEST IT 👉 https://litellm.ai/
 
 ## API Endpoints
 
