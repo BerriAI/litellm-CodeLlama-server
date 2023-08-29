@@ -11,11 +11,9 @@ Works with: CodeLlama, Starcoder, Replit-Code-v1, Phind-CodeLlama, GPT-4, Claude
 **LIVE DEMO** - https://litellm.ai/playground
 
 ## What does CodeLlama Server do
+- **Default model**: Uses Together AI's CodeLlama to answer coding questions, with GPT-4 + Claude-2 as backups (you can easily switch this to any model from Huggingface, Replicate, Cohere, AI21, Azure, OpenAI, etc.) 
+- **Guardrail prompts**: `system_prompt = "Only respond to questions about code. Say 'I don't know' to anything outside of that."`
 
-- Uses Together AI's CodeLlama to answer coding questions, with GPT-4 + Claude-2 as backups (you can easily switch this to any model from Huggingface, Replicate, Cohere, AI21, Azure, OpenAI, etc.) 
-- Sets default system prompt for guardrails `system_prompt = "Only respond to questions about code. Say 'I don't know' to anything outside of that."`
-- Integrates with Promptlayer for model + prompt tracking 
-- Example output
 
 <img src="imgs/code-output.png" alt="Code Output" width="600"/>
 
@@ -24,7 +22,7 @@ Works with: CodeLlama, Starcoder, Replit-Code-v1, Phind-CodeLlama, GPT-4, Claude
   - Text responses will always be available at `['choices'][0]['message']['content']`
   - Stream responses will always be available at `['choices'][0]['delta']['content']`
 - **Error Handling** Using Model Fallbacks (if `CodeLlama` fails, try `GPT-4`) with cooldowns, and retries
-- **Prompt Logging** - Log successful completions to promptlayer for testing + iterating on your prompts in production! (Learn more: https://litellm.readthedocs.io/en/latest/advanced/
+- `Prompt Tracking` - Integrates with Promptlayer for model + prompt tracking 
 
   **Example: Logs sent to PromptLayer**
 
